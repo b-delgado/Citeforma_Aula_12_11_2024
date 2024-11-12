@@ -1,0 +1,12 @@
+#! /bin/bash
+
+if [ "$#" -eq 1 ]; then 
+    
+    echo -e "\nProcessos a correr no computador:\n" # pus mudanças de linha para ficar mais bonito
+    ps aux
+    echo -e "\nProcessos guardados no ficheiro de output: $1.txt"
+    ps aux > $1.txt
+   
+else
+    echo "Como parametro, insira apenas um nome de ficheiro de output."
+fi 
