@@ -1,0 +1,17 @@
+#! /bin/bash
+
+echo "Ficheiro: $1"
+
+if [ -f "$1" ]; then 
+    echo "Número de linhas:"
+    wc -l < $1 # para não estar sempre a repetir o nome do ficheiro usei o <
+    echo "Número de palavras:"
+    wc -w < $1 
+    echo "Primeiras 5 linhas:"
+    head -n 5 $1
+    echo "A palavra erro foi encontrada nas seguintes linhas:"
+    grep -i "erro" $1 
+else
+    echo "O ficheiro não existe."
+fi 
+
