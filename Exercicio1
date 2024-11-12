@@ -1,0 +1,15 @@
+#! /bin/bash
+
+echo "Directório: $1"
+
+if [ -d "$1" ]; then 
+    cd "$1"
+    echo "Conteúdo do directório:"
+    ls -la
+    mkdir -p backup
+    mv *.txt backup/
+
+else
+    echo "Não existe o directório."
+fi 
+
